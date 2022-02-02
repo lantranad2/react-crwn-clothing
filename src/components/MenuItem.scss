@@ -1,0 +1,47 @@
+.MenuItem {
+  border: 1px solid #777;
+  min-width: 30%;
+  height: 17vw;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  &:hover {
+    cursor: pointer;
+
+    .MenuItem__bgImg {
+      transform: scale(1.1);
+    }
+  }
+
+  &__large {
+    height: 25vw;
+  }
+
+  &__bgImg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  }
+
+  &__content {
+    position: absolute;
+    background: #ccc;
+    opacity: 0.8;
+    padding: 1.6rem;
+    text-align: center;
+    border: 1px solid #555;
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 576px) {
+    height: 50vw;
+  }
+}
