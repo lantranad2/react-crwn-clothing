@@ -1,11 +1,15 @@
+import { useNavigate } from 'react-router-dom';
+
 import './MenuItem.scss';
 
-const MenuItem = ({ title, imageUrl, size }) => {
+const MenuItem = ({ title, imageUrl, size, linkUrl }) => {
+  const navigate = useNavigate();
+
   let className = `MenuItem`;
   if (size === 'large') className += ' MenuItem__large';
 
   return (
-    <div className={className}>
+    <div className={className} onClick={() => navigate(`${linkUrl}`)}>
       <div
         className="MenuItem__bgImg"
         style={{ backgroundImage: `url(${imageUrl})` }}
