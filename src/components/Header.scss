@@ -1,0 +1,21 @@
+.Header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+
+  &__menu {
+    margin-left: auto;
+    display: flex;
+  }
+
+  &__menu-item {
+    text-decoration: none;
+    color: #333;
+    padding: 0 1.6rem;
+    font-weight: 500;
+  }
+
+  &__menu-item:last-child {
+    padding: 0 0 0 1.6rem;
+  }
+}

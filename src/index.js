@@ -1,23 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
 import './index.scss';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-import HomePage from './pages/HomePage';
-
-const Hats = () => {
-  return <h1>Hats Page</h1>;
-};
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="hats" element={<Hats />} />
-      </Routes>
-    </BrowserRouter>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

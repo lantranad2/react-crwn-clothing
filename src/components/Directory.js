@@ -1,7 +1,6 @@
 import { Component } from 'react';
 
 import './Directory.scss';
-
 import MenuItem from './MenuItem';
 import hatsImg from '../assets/hats.png';
 import sneakersImg from '../assets/sneakers.png';
