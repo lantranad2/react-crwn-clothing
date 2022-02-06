@@ -3,10 +3,7 @@ import Header from './components/Header';
 
 import './App.scss';
 import HomePage from './pages/HomePage';
-
-const Hats = () => {
-  return <h1>Hats Page</h1>;
-};
+import ShopPage from './pages/ShopPage';
 
 function App() {
   return (
@@ -15,7 +12,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="hats" element={<Hats />} />
+          <Route path="shop" element={<ShopPage />} />
         </Routes>
       </BrowserRouter>
     </div>
