@@ -1,0 +1,27 @@
+.FormInput {
+  position: relative;
+  width: 100%;
+  margin-bottom: 4rem;
+
+  &__label {
+    position: absolute;
+    top: 50%;
+    left: 0.5rem;
+    transform: translateY(-50%);
+    transition: transform 0.4s ease;
+    color: #ccc;
+  }
+
+  &__input {
+    outline: none;
+    border: none;
+    padding: 1rem 0.5rem;
+    border-bottom: 1px solid #333;
+    width: 90%;
+  }
+
+  &__input:focus ~ &__label,
+  &__label-on-top {
+    transform: translateY(-170%);
+  }
+}

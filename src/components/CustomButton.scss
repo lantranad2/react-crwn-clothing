@@ -1,0 +1,16 @@
+.CustomButton {
+  cursor: pointer;
+  outline: none;
+  border: 1px solid #333;
+  background: #333;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 2rem 6rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #333;
+    background: #fff;
+  }
+}
