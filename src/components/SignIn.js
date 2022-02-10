@@ -2,6 +2,7 @@ import { Component } from 'react';
 import FormInput from './FormInput';
 import CustomButton from './CustomButton';
 
+import { signInWithGoogle } from '../firebase/firebase.utils';
 import './SignIn.scss';
 
 class SignIn extends Component {
@@ -20,6 +21,11 @@ class SignIn extends Component {
     });
   };
 
+  _handleSubmit = (e) => {
+    e.preventDefault();
+    // ...
+  };
+
   render() {
     return (
       <div className="SignIn">
@@ -27,7 +33,7 @@ class SignIn extends Component {
         <p className="SignIn__subheading">
           Sign in with your email and password.
         </p>
-        <form className="SignIn__form">
+        <form className="SignIn__form" onSubmit={this._handleSubmit}>
           <FormInput
             label="Email"
             handleChange={this._handleChange}
@@ -44,7 +50,12 @@ class SignIn extends Component {
             type="password"
             required
           />
-          <CustomButton type="button">Sign in</CustomButton>
+          <div className="SignIn__buttons">
+            <CustomButton type="submit">Sign in</CustomButton>
+            <CustomButton onClick={signInWithGoogle} googleButton>
+              Sign in with Google
+            </CustomButton>
+          </div>
         </form>
       </div>
     );

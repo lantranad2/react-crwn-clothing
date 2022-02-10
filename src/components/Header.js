@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../assets/crown.svg';
 import './Header.scss';
+import { signOutUser } from '../firebase/firebase.utils';
+// import { signOut } from 'firebase/auth';
 
-const Header = () => {
+// const signOutUser = async () => {
+//   await signOut(auth);
+// };
+
+const Header = ({ currentUser }) => {
   return (
     <div className="Header">
       <Link to="/">
@@ -15,9 +21,15 @@ const Header = () => {
         <Link className="Header__menu-item" to="/contact">
           CONTACT
         </Link>
-        <Link className="Header__menu-item" to="/signin">
-          SIGN IN
-        </Link>
+        {currentUser ? (
+          <div className="Header__menu-item" onClick={signOutUser}>
+            SIGN OUT
+          </div>
+        ) : (
+          <Link className="Header__menu-item" to="/signin">
+            SIGN IN
+          </Link>
+        )}
       </div>
     </div>
   );
